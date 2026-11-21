@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Fake Job Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI Fake Job Detection</h1>
+
+        <p>Check job postings for common scam indicators</p>
+
+        <form method="POST">
+
+            <textarea name="job" placeholder="Paste the job description here..." required></textarea>
+
+            <button type="submit">Analyse Job</button>
+
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h2>{{ result }}</h2>
+            <p>{{ message }}</p>
+        </div>
+        {% endif %}
+
+        <div class="tips">
+            <h3>Safety Tips</h3>
+            <p>• Never pay money to get a job.</p>
+            <p>• Never share your OTP.</p>
+            <p>• Verify the company website.</p>
+            <p>• Be careful with unrealistic salaries.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
